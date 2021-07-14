@@ -20,6 +20,10 @@ The public version of the RNPDNO has three main problems that hinder the use of 
 
 ## License
 
-RNPDNO scrapper is distributed under the _GNU General Public License v3.0_. 
+Copyright © 2021 Pablo Reyes Moctezuma.
+
+RNPDNO Scrapper is distributed under the _GNU General Public License v3.0_. 
+
+RNPDNO Scrapper is free software and comes with ABSOLUTELY NO WARRANTY. You are welcome to redistribute it under certain conditions.
 
 Please refer to the LICENSE file at the root directory of this repository.
