@@ -30,6 +30,10 @@ Investigadores, en la academia y organizaciones de la sociedad civil, necesitan 
 
 Hasta julio de 2021, la Secretaría de Gobernación se ha negado a compartir versiones abiertas de los datos contenidos en el RNPDNO, a pesar que El Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) se lo ha pedido en, al menos, tres ocasiones.
 
+### ¿Cómo funciona el scrapper?
+
+### ¿Cómo usar el scrapper?
+
 ### Licencia
 
 Copyright © 2021 Pablo Reyes Moctezuma.
@@ -59,6 +63,10 @@ The public version of the RNPDNO has three main problems that hinder the use of 
 Researchers in academia and civil society need this data to **better understand forced disappearances in Mexico and, in general, geographic patterns of insecurity**. Primarily, this will allow to get public-policy recommendations on how to better allocate resources to address this problems. Additionally, this data can allow researchers to **independently monitor government efforts to register and search for missing persons**.
 
 As of July 2021, the Ministry of Interior or the CNB haven't released open format versions of the database in the RNPDNO. Even when the National Institute of Transparency and Access to Public Information has requested to release the full database in at least three occasions.
+
+### How the scrapper works?
+
+### How to use the scrapper?
 
 ### License
 
