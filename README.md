@@ -1,8 +1,16 @@
 # RNPDNO Scrapper
 
-## English
+**(EN)**
 
 This repository contains a Python-based scrapper to extract information from the [public version of Mexico's National Registry of Missing and Untraceable Persons](https://versionpublicarnpdno.segob.gob.mx). The main objective is to create a database of all the missing and untraceable persons in Mexico at neighborhood (_colonia_) level.
+
+**(ES)**
+
+Este repositorio contiene un _scrapper_ escrito en Python para extraer información de la [Versión Pública del Registro Nacional de Personas Desaparecidas y No Localizables](https://versionpublicarnpdno.segob.gob.mx). El principal objetivo de este _scrapper_ es crear una base de datos —a nivel colonia— de los casos de personas desaparecidas y no localizables en México.
+
+## Español
+
+## English
 
 ### About the RNPDNO
 
