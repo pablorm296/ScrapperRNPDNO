@@ -8,6 +8,8 @@ This repository contains a Python-based scrapper to extract information from the
 
 Este repositorio contiene un _scrapper_ escrito en Python para extraer información de la [Versión Pública del Registro Nacional de Personas Desaparecidas y No Localizadas](https://versionpublicarnpdno.segob.gob.mx). El principal objetivo de este _scrapper_ es crear una base de datos —a nivel colonia— de los casos de personas desaparecidas y no localizables en México.
 
+## Table of contents
+
 - [RNPDNO Scrapper](#rnpdno-scrapper)
   - [Español](#español)
     - [¿Qué es el RNPDNO?](#qué-es-el-rnpdno)
