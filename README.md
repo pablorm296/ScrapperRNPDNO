@@ -36,7 +36,7 @@ Copyright © 2021 Pablo Reyes Moctezuma.
 
 RNPDNO Scrapper se distribuye bajo una licencia _GNU General Public License v3.0_. 
 
-RNPDNO Scrapper es un _software_ libre y gratuito, por lo que no incluye garanría alguna. Puedes redistribuir este software y hacerle modificaciones, bajo ciertas condiciones. Por favor, véase la licencia en el archivo LICENSE de este repositorio.
+RNPDNO Scrapper es un _software_ libre y gratuito, por lo que no incluye garantía alguna. Puedes redistribuir este _software_ y hacerle modificaciones, bajo ciertas condiciones. Por favor consulta la licencia en el archivo LICENSE de este repositorio.
 
 ## English
 
