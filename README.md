@@ -30,6 +30,14 @@ Investigadores, en la academia y organizaciones de la sociedad civil, necesitan 
 
 Hasta julio de 2021, la Secretaría de Gobernación se ha negado a compartir versiones abiertas de los datos contenidos en el RNPDNO, a pesar que El Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) se lo ha pedido en, al menos, tres ocasiones.
 
+### Licencia
+
+Copyright © 2021 Pablo Reyes Moctezuma.
+
+RNPDNO Scrapper se distribuye bajo una licencia _GNU General Public License v3.0_. 
+
+RNPDNO Scrapper es un _software_ libre y gratuito, por lo que no incluye garanría alguna. Puedes redistribuir este software y hacerle modificaciones, bajo ciertas condiciones. Por favor, véase la licencia en el archivo LICENSE de este repositorio.
+
 ## English
 
 ### About the RNPDNO
