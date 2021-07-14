@@ -10,7 +10,7 @@ The National Search Commission (Comisión Nacional de Búsqueda, CNB by its acro
 
 The RNPDNO is mainly fed from the information gathered by each state's Attorney Office and the (Federal) Attorney General's Office. Plus, the CNB has a [public web app](https://cnbreportadesaparecidos.segob.gob.mx) where users can file a missing or uncontactable person report. 
 
-The RNPDNO was created in 2017 after the Mexican Congress had passed [a law](http://www.diputados.gob.mx/LeyesBiblio/pdf/LGMDFP_200521.pdf) that created multiple agencies whose main objective is to search for missing and untraceable persons, as well as preventing, prosecuting, and registering forced disappearance cases. This agencies coordinate the federal and local governments on this efforts.
+The RNPDNO was created in 2017 after the Mexican Congress had passed [a law](http://www.diputados.gob.mx/LeyesBiblio/pdf/LGMDFP_200521.pdf) that created multiple agencies whose main objective is to search for missing and untraceable persons, as well as preventing, prosecuting, and registering forced disappearance cases. These agencies coordinate the federal and local governments on this efforts.
 
 ## Why this scrapper?
 
