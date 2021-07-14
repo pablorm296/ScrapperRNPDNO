@@ -1,8 +1,10 @@
 # RNPDNO Scrapper
 
+## English
+
 This repository contains a Python-based scrapper to extract information from the [public version of Mexico's National Registry of Missing and Untraceable Persons](https://versionpublicarnpdno.segob.gob.mx). The main objective is to create a database of all the missing and untraceable persons in Mexico at neighborhood (_colonia_) level.
 
-## About the RNPDNO
+### About the RNPDNO
 
 Mexico's National Registry of Missing and Untraceable Persons (Registro Nacional de Personas Desaparecidas y No Localizadas, RNPDNO by its acronym in Spanish) is a centralized database that gathers information of missing and untraceable persons in Mexico. 
 
@@ -12,13 +14,17 @@ The RNPDNO is mainly fed from the information gathered by each state's Attorney 
 
 The RNPDNO was created in 2017 after the Mexican Congress had passed [a law](http://www.diputados.gob.mx/LeyesBiblio/pdf/LGMDFP_200521.pdf) that created multiple agencies whose main objective is to search for missing and untraceable persons, as well as preventing, prosecuting, and registering forced disappearance cases. These agencies coordinate the federal and local governments on this efforts.
 
-## Why this scrapper?
+### Why this scrapper?
 
 The RNPDNO has a public version hosted in a [public web app](https://versionpublicarnpdno.segob.gob.mx). In the public version of the RNPDNO, users can visualize a general summary on the number of missing and untraceable persons in Mexico. Users can also get general summaries at the county (_municipio_) and neighborhood (_colonia_) level. 
 
 The public version of the RNPDNO has three main problems that hinder the use of this information in research projects. First, **the information available at the public version of the RNPDNO is only presented in charts** (bar, line, and area charts). Secondly, **users can only query information from one state, county or neighborhood at a time**. Finally, **there aren't any tools available for exporting in an open format the queried data**.
 
-## License
+Researchers in academia and civil society need this data to **better understand forced disappearances in Mexico and, in general, geographic patterns of insecurity**. Primarily, this will allow to get public-policy recommendations on how to better allocate resources to address this problems. Additionally, this data can allow researchers to **independently monitor government efforts to register and search for missing persons**.
+
+As of July 2021, the Ministry of Interior or the CNB haven't released open format versions of the database in the RNPDNO. Even when the National Institute of Transparency and Access to Public Information has requested to release the full database in at least three occasions.
+
+### License
 
 Copyright © 2021 Pablo Reyes Moctezuma.
 
