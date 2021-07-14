@@ -6,9 +6,29 @@ This repository contains a Python-based scrapper to extract information from the
 
 **(ES)**
 
-Este repositorio contiene un _scrapper_ escrito en Python para extraer información de la [Versión Pública del Registro Nacional de Personas Desaparecidas y No Localizables](https://versionpublicarnpdno.segob.gob.mx). El principal objetivo de este _scrapper_ es crear una base de datos —a nivel colonia— de los casos de personas desaparecidas y no localizables en México.
+Este repositorio contiene un _scrapper_ escrito en Python para extraer información de la [Versión Pública del Registro Nacional de Personas Desaparecidas y No Localizadas](https://versionpublicarnpdno.segob.gob.mx). El principal objetivo de este _scrapper_ es crear una base de datos —a nivel colonia— de los casos de personas desaparecidas y no localizables en México.
 
 ## Español
+
+### ¿Qué es el RNPDNO?
+
+El Registro Nacional de Personas Desaparecidas y No Localizadas (RNPDNO) es un registro centralizado de los casos de personas desaparecidas y no localizadas en México. Se entiende por persona desaparecida como aquella cuyo  paradero  se  desconoce  y  se  presume,  a  partir  de cualquier indicio, que su ausencia se relaciona con la comisión de un delito. Una persona no localizable es aqulla cuya ubicación se desconoce y, que de acuerdo con la información que se reporte a la autoridad, su ausencia no se relaciona con la probable comisión de algún delito.
+
+La Comisión Nacional de Búsqueda (CNB) es el órgano encargado de mantener y administrar el RNPDNO. La CNB es una órgano desconcentrado de la Secretaría de Gobernación (es decir, subordinado jerárquico y **sin** personalidad jurídina ni patrimonio propio) cuyo mandato es determinar, ejecutar y dar seguimiento a las  acciones  de búsqueda  de personas desaparecidas y no localizadas en México.
+
+El RNPDNO se alimenta, principalmente, de la información proporcionada por la Fiscalía General de la República (FGR) y las fiscalías de las 32 entidades federativas. Adicionalmente, la CNB cuenta con una [aplicación web pública](https://cnbreportadesaparecidos.segob.gob.mx) donde cualquier usuario puede hacer un reporte de persona desaparecida o no localizada.
+
+El RNPDNO nació en 2017, después de la aprobación de la [_Ley General en Materia de Desaparición Forzada de Personas_](http://www.diputados.gob.mx/LeyesBiblio/pdf/LGMDFP_200521.pdf), y sustituyó al extinto Registro Nacional de Personas Extraviadas o Desaparecidas. Además, esta ley creó mecanismos de coordinación entre los distintos niveles de govierno para prevenir, perseguir y registrar los casos de desaparición forzada.
+
+### ¿Por qué un scrapper?
+
+El RNPDNO cuenta con una versión pública [disponible para conuslta desde una aplicación web pública](https://versionpublicarnpdno.segob.gob.mx). En la versión pública del RNPDNO, los usuarios pueden consultar un resumen general sobre el estado de personas desaparecidas y no localizadas en México. Este resumen puede ser desglozado a nivel nacional, estatal, municipal o por colonia.
+
+Sin embargo, la versión pública del RNPDNO tiene tres principales problemas. En primer lugar, **la información disponible sólo se presenta por medio de gráficos** (de barra, línea y área) que carecen de herramientas interactivas, tienen una pobre elección de tipografía y paleta de colores, entre otros problemas. Esto dificulta la consulta de la información. En segundo lugar, los usuarios **sólo pueden consultar la información de un estado, municipio o colonia a la vez**, entorpeciendo las comparaciones entre unidades geográficas. Finalmente, los usuarios **no cuentan con herramientas para exportar los datos consultados en formatos de datos abiertos**. 
+
+Investigadores, en la academia y organizaciones de la sociedad civil, necesitan acceso a estos datos para **profundizar nuestro conocimiento sobre el problema de la desaparición forzada de personas y, en general, la violencia e inseguridad en nuestro país.** Las investigaciones en estas áreas pueden generar recomendaciones de política pública para distribuir de mejor manera los recursos políticos y presupuestarios para atender esta problemática. Adicionalmente, el acceso a estos datos permitirá a actores académicos y de la sociedad civil a **realizar un monitoreo independiente del RNPDNO y las acciones del gobierno para buscar a personas desaparecidas**, así como para contrastar la información con otras fuentes. 
+
+Hasta julio de 2021, la Secretaría de Gobernación se ha negado a compartir versiones abiertas de los datos contenidos en el RNPDNO, a pesar que El Instituto Nacional de Transparencia, Acceso a la Información y Protección de Datos Personales (INAI) se lo ha pedido en, al menos, tres ocasiones.
 
 ## English
 
