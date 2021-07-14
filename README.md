@@ -22,7 +22,7 @@ El RNPDNO nació en 2017, después de la aprobación de la [_Ley General en Mate
 
 ### ¿Por qué un scrapper?
 
-El RNPDNO cuenta con una versión pública [disponible para conuslta desde una aplicación web pública](https://versionpublicarnpdno.segob.gob.mx). En la versión pública del RNPDNO, los usuarios pueden consultar un resumen general sobre el estado de personas desaparecidas y no localizadas en México. Este resumen puede ser desglozado a nivel nacional, estatal, municipal o por colonia.
+El RNPDNO cuenta con una versión pública [disponible para conuslta desde una aplicación web](https://versionpublicarnpdno.segob.gob.mx). En la versión pública del RNPDNO, los usuarios pueden consultar un resumen general sobre el estado de personas desaparecidas y no localizadas en México. Este resumen puede ser desglozado a nivel nacional, estatal, municipal o por colonia.
 
 Sin embargo, la versión pública del RNPDNO tiene tres principales problemas. En primer lugar, **la información disponible sólo se presenta por medio de gráficos** (de barra, línea y área) que carecen de herramientas interactivas, tienen una pobre elección de tipografía y paleta de colores, entre otros problemas. Esto dificulta la consulta de la información. En segundo lugar, los usuarios **sólo pueden consultar la información de un estado, municipio o colonia a la vez**, entorpeciendo las comparaciones entre unidades geográficas. Finalmente, los usuarios **no cuentan con herramientas para exportar los datos consultados en formatos de datos abiertos**. 
 
