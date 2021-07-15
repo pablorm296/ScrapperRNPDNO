@@ -52,7 +52,7 @@
 ```json
 [
     {"Value":0,"Text":"--TODOS--"},
-    {"Value":1,"Text":"ABALÁ"}, ... 
+    {"Value":1,"Text":"ABALÁ"}
 ]
 ```
 
