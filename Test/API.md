@@ -43,7 +43,7 @@
 
 **Description**: Returns a list of objects containing the name and ID of municipalities. The field `Value` contains the municipality ID, and the field `Value` contains the municipality name.
 
-**Request body type**: JSON
+**Request body type**: Form data
 
 **Request body**:
 
@@ -64,7 +64,7 @@
 
 **Description**: Returns a list of objects containing the name and id of all neighborhoods in the requested municipality. The field `Value` contains the neighborhood ID, and the field `Value` contains the neighborhood name.
 
-**Request body type**: JSON
+**Request body type**: Form data
 
 **Request body**:
 
@@ -73,6 +73,15 @@
     "idEstado": "string",
     "idMunicipio": "string"
 }
+```
+
+**Response body example**:
+
+```json
+[
+    {"Value":0,"Text":"--TODAS--"},
+    {"Value":294045,"Text":"1° DE MAYO"}
+]
 ```
 
 ---
@@ -158,5 +167,25 @@
     "esONG":"",
     "idHipotesisNoLocalizacion":"0",
     "idDelito":"0"
+}
+```
+
+**Response body example**:
+
+```json
+{
+    "TotalGlobal":"556",
+    "TotalDesaparecidos":"133",
+    "TotalLocalizados":"423",
+    "PorcentajeDesaparecidos":"23.92 %",
+    "PorcentajeLocalizados":"76.08 %",
+    "TotalSoloDesaparecidos":"115",
+    "TotalSoloNoLocalizados":"18",
+    "PorcentajeSoloDesaparecidos":"86.47 %",
+    "PorcentajeSoloNoLocalizados":"13.53 %",
+    "TotalLocalizadosCV":"409",
+    "TotalLocalizadosSV":"14",
+    "PorcentajeLocalizadosCV":"96.69 %",
+    "PorcentajeLocalizadosSV":"3.31 %"
 }
 ```
