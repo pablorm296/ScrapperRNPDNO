@@ -18,19 +18,8 @@
       - [idHipotesisNoLocalizacion](#idhipotesisnolocalizacion)
     - [Endpoints](#endpoints-1)
       - [Totales](#totales)
----    <option value="0" selected="">PERS    <option value="0" selected="">PERSONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS</option>
-    <option value="7">PERSONAS DESAPARECIDAS Y NO LOCALIZADAS</option>
-    <option value="4">PERSONAS DESAPARECIDAS</option>
-    <option value="5">PERSONAS NO LOCALIZADAS</option>
-    <option value="6">PERSONAS LOCALIZADAS</option>
-    <option value="2">PERSONAS LOCALIZADAS CON VIDA</option>
-    <option value="3">PERSONAS LOCALIZADAS SIN VIDA</option>ONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS</option>
-    <option value="7">PERSONAS DESAPARECIDAS Y NO LOCALIZADAS</option>
-    <option value="4">PERSONAS DESAPARECIDAS</option>
-    <option value="5">PERSONAS NO LOCALIZADAS</option>
-    <option value="6">PERSONAS LOCALIZADAS</option>
-    <option value="2">PERSONAS LOCALIZADAS CON VIDA</option>
-    <option value="3">PERSONAS LOCALIZADAS SIN VIDA</option>
+
+--- 
 
 ## Fechas
 
