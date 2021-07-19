@@ -18,6 +18,8 @@
       - [idHipotesisNoLocalizacion](#idhipotesisnolocalizacion)
     - [Endpoints](#endpoints-1)
       - [Totales](#totales)
+      - [BarChartSexoColonia](#barchartsexocolonia)
+      - [AreaChartSexoAnio](#areachartsexoanio)
 
 --- 
 
@@ -187,5 +189,147 @@
     "TotalLocalizadosSV":"14",
     "PorcentajeLocalizadosCV":"96.69 %",
     "PorcentajeLocalizadosSV":"3.31 %"
+}
+```
+
+#### BarChartSexoColonia
+
+**Description**: Returns an object containing the number of missing people by sex and neighborhood.
+
+**Request body type**: JSON
+
+**Request body**: 
+
+```json
+{
+    "titulo":"PERSONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS",
+    "subtitulo":"POR COLONIAS - IZTAPALAPA",
+    "idEstatusVictima":"0",
+    "fechaInicio":"",
+    "fechaFin":"",
+    "idEstado":"9",
+    "idMunicipio":"7",
+    "mostrarFechaNula":"0",
+    "idColonia":"0",
+    "idNacionalidad":"0",
+    "edadInicio":"",
+    "edadFin":"",
+    "mostrarEdadNula":"0",
+    "idHipotesis":"",
+    "idMedioConocimiento":"",
+    "idCircunstancia":"",
+    "tieneDiscapacidad":"",
+    "idTipoDiscapacidad":"0",
+    "idEtnia":"0",
+    "idLengua":"0",
+    "idReligion":"",
+    "esMigrante":"",
+    "idEstatusMigratorio":"0",
+    "esLgbttti":"",
+    "esServidorPublico":"",
+    "esDefensorDH":"",
+    "esPeriodista":"",
+    "esSindicalista":"",
+    "esONG":"",
+    "idHipotesisNoLocalizacion":"0",
+    "idDelito":"0"
+}
+```
+
+**Response body example**:
+
+```json
+{
+    "Title":"PERSONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS",
+    "Subtitle":"POR COLONIAS - IZTAPALAPA",
+    "XAxisCategories":["CHINAMPAC DE JUAREZ","UNIDAD EJÉRCITO CONSTITUCIONALISTA","PLAN DE IGUALA","INSURGENTES","LEYES DE REFORMA 1A SECCIÓN","SAN SIMÓN CULHUACÁN","CUCHILLA DEL MORAL","EJERCITO DE AGUA PRIETA","CENTRAL DE ABASTO","MIRAVALLE","SAN LORENZO","LA POLVORILLA","AMPLIACIÓN RICARDO FLORES MAGÓN","IZTLAHUACÁN","RINCONADA DEL MOLINO","ESTRELLA CULHUACÁN","SANTA MARIA AZTAHUACAN","SANTA BÁRBARA","GRANJAS SAN ANTONIO","BUENAVISTA","UNIDAD VICENTE GUERRERO","SAN ANDRÉS TOMATLÁN","JARDINES DE SAN LORENZO TEZONCO","ACULCO","PUENTE BLANCO","PROGRESISTA","CONSEJO AGRARISTA MEXICANO","LOS REYES CULHUACÁN","SANTIAGO ACAHUALTEPEC","SANTA ISABEL INDUSTRIAL"],
+    "XAxisTitle":null,
+    "YAxisTitle":"Número de personas",
+    "YAxisTooltipValueSuffix":" personas",
+    "TooltipText":null,
+    "PointStar":null,
+    "Series":[
+        {"name":"Hombre","data":[4,5,1,1,1,1,0,4,11,4,2,4,1,1,1,0,8,7,2,6,8,1,0,2,5,4,10,5,4,2]},
+        {"name":"Mujer","data":[5,3,0,0,5,1,1,7,5,3,0,2,1,2,1,1,8,3,5,12,9,2,1,2,0,3,5,2,5,3]},
+        {"name":"Indeterminado","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+        ],
+    "TableValues":[
+        {"text":"Hombre","value":"844","porcent":"52.52%"},
+        {"text":"Mujer","value":"754","porcent":"46.92%"},
+        {"text":"Indeterminado","value":"09","porcent":"0.56%"},
+        {"text":"\u003cstrong\u003eTotal\u003c/strong\u003e","value":"1,607","porcent":"100.00%"}
+        ],
+    "TableTotal":null
+}
+```
+
+#### AreaChartSexoAnio
+
+**Description**: Returns an object containing the number of missing people by sex and year.
+
+**Request body type**: JSON
+
+**Request body**: 
+
+```json
+{
+    "titulo":"PERSONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS",
+    "subtitulo":"POR AÑO ",
+    "idEstatusVictima":"0",
+    "fechaInicio":"",
+    "fechaFin":"",
+    "idEstado":"9",
+    "idMunicipio":"7",
+    "mostrarFechaNula":"0",
+    "idColonia":"0",
+    "idNacionalidad":"0",
+    "edadInicio":"",
+    "edadFin":"",
+    "mostrarEdadNula":"0",
+    "idHipotesis":"",
+    "idMedioConocimiento":"",
+    "idCircunstancia":"",
+    "tieneDiscapacidad":"",
+    "idTipoDiscapacidad":"0",
+    "idEtnia":"0",
+    "idLengua":"0",
+    "idReligion":"",
+    "esMigrante":"",
+    "idEstatusMigratorio":"0",
+    "esLgbttti":"",
+    "esServidorPublico":"",
+    "esDefensorDH":"",
+    "esPeriodista":"",
+    "esSindicalista":"",
+    "esONG":"",
+    "idHipotesisNoLocalizacion":"0",
+    "idDelito":"0"
+}
+```
+
+**Response body example**:
+
+```json
+{
+    "Title":"PERSONAS DESAPARECIDAS, NO LOCALIZADAS Y LOCALIZADAS",
+    "Subtitle":"POR AÑO ",
+    "XAxisCategories":["1.CIFRA SIN  AÑO DE REFERENCIA","1986","1989","1998","2005","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021"],
+    "XAxisTitle":"",
+    "YAxisTitle":"Número de personas",
+    "YAxisTooltipValueSuffix":" personas",
+    "TooltipText":null,
+    "PointStar":null,
+    "Series":[
+        {"name":"Hombre","data":[24,0,1,0,1,0,30,48,51,63,89,12,10,2,5,9,267,162,70]},
+        {"name":"Mujer","data":[25,1,0,1,0,1,23,43,59,64,98,6,11,5,6,5,222,155,29]},
+        {"name":"Indeterminado","data":[9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+    ],
+    "TableValues":[
+        {"text":"Hombre","value":"844","porcent":"52.52%"},
+        {"text":"Mujer","value":"754","porcent":"46.92%"},
+        {"text":"Indeterminado","value":"09","porcent":"0.56%"},
+        {"text":"\u003cstrong\u003eTotal\u003c/strong\u003e","value":"1,607","porcent":"100.00%"}
+    ],
+    "TableTotal":null
 }
 ```
