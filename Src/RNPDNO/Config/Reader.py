@@ -17,6 +17,7 @@ class ConfigReader(dict):
 
         self.__app_vars = None
         self.__config_db_conn = None
+        self.__app_vars_loaded = False
 
     @property
     def config_db_conn(self) -> pm.MongoClient:
@@ -89,7 +90,13 @@ class ConfigReader(dict):
             if is_scrapper_var:
                 self.__app_vars[var] = env_vars[var]
 
+        self.__app_vars_loaded = True
+
     def load_config(self) -> None:
+
+        # Check if env vars have been loaded
+        if not self.__app_vars_loaded:
+            raise ValueError("Environment variables must be loaded before loading the app configuration!")
 
         # Open new connection
         self.open_new_config_db_conn()
