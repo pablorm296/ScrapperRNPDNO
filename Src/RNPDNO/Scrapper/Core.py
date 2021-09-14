@@ -140,4 +140,27 @@ class Scrapper:
 
         logger.info("App configuration loaded!")
 
+    def get_request_template(self, api_name: str, end_point: str, error: bool = False) -> Union[dict, None]:
+        
+        logger.info("Looking for request template (api: %s, end_point: %s)...", api_name, end_point)
+        search_result = next( (doc for doc in self.request_templates if doc["api"] == api_name and doc["endPoint"] == end_point), None )
+
+        if search_result is None:
+            msg = "The request template doesn't exist! (api: {0}, end_point: {1})".format(api_name, end_point)
+            if error:
+                raise self.Exceptions.TemplateNotFound(msg)
+            else:
+                logger.warning(msg)
+                return None
+
+        if len(search_result) > 1:
+            msg = "The search query returned more than one template (api: {0}, end_point: {1})".format(api_name, end_point)
+            if error:
+                raise self.Exceptions.MultipleTemplatesFound(msg)
+            else:
+                logger.warning(msg)
+                return None
+
+        return search_result
+
         pass
