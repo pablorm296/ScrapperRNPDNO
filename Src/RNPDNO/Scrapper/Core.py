@@ -111,4 +111,17 @@ class Scrapper:
 
         return self.__target_db_password
 
+    def set_common_config_variables(self) -> None:
+        """Set common configuration variables as class properties
+
+        Raises:
+            ValueError: If app configuration is not loaded before calling this method.
+        """
+
+        self.check_config_loaded()
+
+        self.__target_db_name = self.config["SCRAPPER_MONGO_TARGETDB_NAME"]
+        self.__target_db_username = self.config["SCRAPPER_MONGO_TARGETDB_USERNAME"]
+        self.__target_db_password = self.config["SCRAPPER_MONGO_TARGETDB_PASSWORD"]
+
         pass
