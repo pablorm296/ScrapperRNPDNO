@@ -1,6 +1,8 @@
 import pymongo as pm
 from pymongo.errors import ConnectionFailure
 
+from typing import Union
+
 import logging
 import re
 import os
@@ -98,7 +100,7 @@ class ConfigReader(dict):
 
         self.__app_vars_loaded = True
 
-    def load_config(self, collection = "config_vars") -> None:
+    def load_config(self, collection = "config_vars") -> Union[None, dict]:
 
         logger.info("Loading app configuration from DB (target collection: %s)...", collection)
 
@@ -120,14 +122,33 @@ class ConfigReader(dict):
         # Get app_config_vars collection
         app_config_vars_collection = app_config_db[collection]
 
-        # Loop through each doc and register to self
-        for document in app_config_vars_collection.find():
-            # Get config variable name
-            var_name = document["name"]
-            # Get config variable value
-            var_value = document["value"]
+        if collection == "config_vars":
+            logger.debug("Registering configuration variables to self, since collection is config_vars...")
 
-            # Register to self
-            self.update({var_name: var_value})
+            # Loop through each doc and register to self
+            for document in app_config_vars_collection.find():
+                # Get config variable name
+                var_name = document["name"]
+                # Get config variable value
+                var_value = document["value"]
 
-        logger.info("%s configuration variables were loaded!", len(self))
+                # Register to self
+                self.update({var_name: var_value})
+
+            logger.info("%s configuration variables were loaded!", len(self))
+        else:
+            return_dict = {}
+
+            # Loop through each doc and register to return_dict
+            for document in app_config_vars_collection.find():
+                # Get config variable name
+                var_name = document["name"]
+                # Get config variable value
+                var_value = document["value"]
+
+                # Register to self
+                return_dict.update({var_name: var_value})
+
+            logger.info("%s configuration variables were loaded!", len(return_dict))
+
+            return return_dict
