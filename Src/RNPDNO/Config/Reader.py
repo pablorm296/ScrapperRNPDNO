@@ -100,7 +100,7 @@ class ConfigReader(dict):
 
         self.__app_vars_loaded = True
 
-    def load_config(self, collection = "config_vars") -> Union[None, dict]:
+    def load_config(self, collection = "config_vars") -> Union[None, list]:
 
         logger.info("Loading app configuration from DB (target collection: %s)...", collection)
 
@@ -137,18 +137,12 @@ class ConfigReader(dict):
 
             logger.info("%s configuration variables were loaded!", len(self))
         else:
-            return_dict = {}
+            return_list = []
 
             # Loop through each doc and register to return_dict
             for document in app_config_vars_collection.find():
-                # Get config variable name
-                var_name = document["name"]
-                # Get config variable value
-                var_value = document["value"]
+                return_list.append(document)
 
-                # Register to self
-                return_dict.update({var_name: var_value})
+            logger.info("%s configuration variables were loaded!", len(return_list))
 
-            logger.info("%s configuration variables were loaded!", len(return_dict))
-
-            return return_dict
+            return return_list
