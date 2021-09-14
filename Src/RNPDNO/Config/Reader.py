@@ -92,7 +92,7 @@ class ConfigReader(dict):
 
         self.__app_vars_loaded = True
 
-    def load_config(self) -> None:
+    def load_config(self, collection = "config_vars") -> None:
 
         # Check if env vars have been loaded
         if not self.__app_vars_loaded:
@@ -108,7 +108,7 @@ class ConfigReader(dict):
         app_config_db = self.config_db_conn[self.app_vars["SCRAPPER_MONGO_CONFIGDB_NAME"]]
 
         # Get app_config_vars collection
-        app_config_vars_collection = app_config_db["config_vars"]
+        app_config_vars_collection = app_config_db[collection]
 
         # Loop through each doc and register to self
         for document in app_config_vars_collection.find():
