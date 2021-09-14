@@ -56,7 +56,7 @@ class ConfigReader(dict):
         # Open a new connection to the database
         self.__config_db_conn = pm.MongoClient(mongo_uri)
 
-    def set_env_vars(self) -> None:
+    def load_env_vars(self) -> None:
         """Set environment configuration variables
 
         Environment configuration variables are stored in the `app.vars` attribute.
