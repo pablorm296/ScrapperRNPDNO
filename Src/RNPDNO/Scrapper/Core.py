@@ -124,4 +124,20 @@ class Scrapper:
         self.__target_db_username = self.config["SCRAPPER_MONGO_TARGETDB_USERNAME"]
         self.__target_db_password = self.config["SCRAPPER_MONGO_TARGETDB_PASSWORD"]
 
+    def load_config(self) -> None:
+        """Load app configuration
+        """
+
+        logger.info("Initializing new instance of configuration reader object...")
+        self.__config_reader = ConfigReader()
+
+        logger.info("Starting configuration loading routine...")
+        self.config.load_env_vars()
+        self.config.load_config(collection = "config_vars")
+        self.__request_templates = self.config.load_config(collection = "request_templates")
+
+        self.__config_loaded = True
+
+        logger.info("App configuration loaded!")
+
         pass
