@@ -1,0 +1,41 @@
+[
+    {
+        "api": "sociodemográficos",
+        "endPoint": "totals",
+        "url": "/Sociodemograficos/Totales",
+        "host": "https://versionpublicarnpdno.segob.gob.mx/",
+        "method": "POST",
+        "payloadTemplate": {
+            "titulo": "",
+            "idEstatusVictima": "0",
+            "fechaInicio": "",
+            "fechaFin": "",
+            "idEstado": "0",
+            "idMunicipio": "0",
+            "mostrarFechaNula": "0",
+            "idColonia": "0",
+            "idNacionalidad": "0",
+            "edadInicio": "",
+            "edadFin": "",
+            "mostrarEdadNula": "0",
+            "idHipotesis": "",
+            "idMedioConocimiento": "",
+            "idCircunstancia": "",
+            "tieneDiscapacidad": "",
+            "idTipoDiscapacidad": "0",
+            "idEtnia": "0",
+            "idLengua": "0",
+            "idReligion": "",
+            "esMigrante": "",
+            "idEstatusMigratorio": "0",
+            "esLgbttti": "",
+            "esServidorPublico": "",
+            "esDefensorDH": "",
+            "esPeriodista": "",
+            "esSindicalista": "",
+            "esONG": "",
+            "idHipotesisNoLocalizacion": "0",
+            "idDelito": "0"
+        }
+    }
+]
