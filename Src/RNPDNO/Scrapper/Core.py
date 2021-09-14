@@ -1,4 +1,11 @@
-import requests
+from typing import Union
+
+from pymongo.common import _AUTH_OPTIONS
+from RNPDNO.Config import ConfigReader
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Scrapper:
 
