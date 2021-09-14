@@ -14,4 +14,7 @@ class Scrapper:
             pass
 
     def __init__(self) -> None:
+        
+        self.__config_loaded = False
+
         pass
