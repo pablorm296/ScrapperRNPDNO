@@ -37,4 +37,78 @@ class Scrapper:
         else:
             return False
 
+    @property
+    def config(self) -> ConfigReader:
+        """App config
+
+        Get the application configuration object.
+
+        Returns:
+            ConfigReader: An object of class ConfigReader containing the current application configuration.
+        """
+        return self.__config_reader
+
+    @property
+    def env_vars(self) -> dict:
+        """Environment variables
+
+        Returns:
+            dict: A dict containing the environment variables detected by the application's ConfigReader.
+        """
+        return self.config.app_vars
+
+    @property
+    def request_templates(self) -> list:
+
+        self.check_config_loaded()
+
+        return self.__request_templates
+
+    @property
+    def TARGETDB_NAME(self) -> str:
+        """Target MongoDB name
+
+        The target MongoDB is the DB where the scrapped information is to be stored.
+
+        Raises:
+            ValueError: If app configuration is not loaded before calling this property.
+
+        Returns:
+            str: Target MongoDB name.
+        """
+
+        self.check_config_loaded()
+
+        return self.__target_db_name
+
+    @property
+    def TARGETDB_USERNAME(self) -> str:
+        """Target MongoDB username
+
+        Raises:
+            ValueError: If app configuration is not loaded before calling this property.
+
+        Returns:
+            str: Target MongoDB username.
+        """
+
+        self.check_config_loaded()
+
+        return self.__target_db_username
+
+    @property
+    def TARGETDB_PASSWORD(self) -> str:
+        """Target MongoDB password
+
+        Raises:
+            ValueError: If app configuration is not loaded before calling this property.
+
+        Returns:
+            str: Target MongoDB password.
+        """
+
+        self.check_config_loaded()
+
+        return self.__target_db_password
+
         pass
