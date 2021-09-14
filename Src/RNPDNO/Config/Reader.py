@@ -54,6 +54,8 @@ class ConfigReader(dict):
         )
 
         # Open a new connection to the database
+        logger.info("Opening new connection to the config DB...")
+        logger.debug("Mongo URI used to connect to the new config DB: %s", mongo_uri)
         self.__config_db_conn = pm.MongoClient(mongo_uri)
 
     def load_env_vars(self) -> None:
@@ -73,6 +75,7 @@ class ConfigReader(dict):
         """
         
         # Get all the env vars
+        logger.info("Loading environment variables...")
         env_vars = os.environ
 
         # Coerce as dict
@@ -90,9 +93,14 @@ class ConfigReader(dict):
             if is_scrapper_var:
                 self.__app_vars[var] = env_vars[var]
 
+        logger.info("%s environment variables were loaded.", len(self.__app_vars))
+        logger.debug("The following environment variables were loaded: %s", self.__app_vars)
+
         self.__app_vars_loaded = True
 
     def load_config(self, collection = "config_vars") -> None:
+
+        logger.info("Loading app configuration from DB (target collection: %s)...", collection)
 
         # Check if env vars have been loaded
         if not self.__app_vars_loaded:
@@ -107,6 +115,8 @@ class ConfigReader(dict):
         # Get app_config db
         app_config_db = self.config_db_conn[self.app_vars["SCRAPPER_MONGO_CONFIGDB_NAME"]]
 
+        logger.info("Successful connection to the config DB!")
+
         # Get app_config_vars collection
         app_config_vars_collection = app_config_db[collection]
 
@@ -120,6 +130,4 @@ class ConfigReader(dict):
             # Register to self
             self.update({var_name: var_value})
 
-        
-        
-
+        logger.info("%s configuration variables were loaded!", len(self))
