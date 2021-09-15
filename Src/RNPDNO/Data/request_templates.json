@@ -1,10 +1,18 @@
 [   
     {
-        "api": "catalogue",
-        "endpoint": "states",
-        "url": "/Catalogo/Estados",
+        "api": "dashboard",
+        "endpoint": "index",
+        "url": "Dashboard/Index",
         "host": "https://versionpublicarnpdno.segob.gob.mx/",
-        "method": "POST",
+        "method": "GET",
+        "payloadTemplate": null
+    },
+    {
+        "api": "dashboard",
+        "endpoint": "home",
+        "url": "Dashboard/ContextoGeneral",
+        "host": "https://versionpublicarnpdno.segob.gob.mx/",
+        "method": "GET",
         "payloadTemplate": null
     },
     {
