@@ -232,7 +232,16 @@ class Scrapper:
 
         return search_result
 
-    def get_totals(self, state_ida: str = "0", mun_id: str = "0", neighborhood_id: str = "0", date_start: str = "", date_ent: str = "", **kwargs) -> dict:
+    def get_states_catalogue(self):
+        pass
+
+    def get_municipalities_catalogue(self, state_id: str):
+        pass
+
+    def get_neighborhood_catalogue(self, state_id: str, mun_id: str):
+        pass
+
+    def get_totals(self, state_id: str = "0", mun_id: str = "0", neighborhood_id: str = "0", date_start: str = "", date_ent: str = "", **kwargs) -> dict:
         pass
 
     def get_missing_by_neighborhood(self, state_id: str, mun_id: str, neighborhood_id: str = "0", **kwargs) -> dict:
