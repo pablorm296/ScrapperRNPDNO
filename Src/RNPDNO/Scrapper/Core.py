@@ -168,6 +168,13 @@ class Scrapper:
 
         return self.__target_db_password
 
+    def create_requests_session(self) -> None:
+
+        logger.info("Creating new requests session...")
+        self.__session = requests.Session()
+        self.__session_created = True
+        logger.info("Session created!")
+
     def set_common_config_variables(self) -> None:
         """Set common configuration variables as class properties
 
