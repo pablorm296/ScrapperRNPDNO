@@ -8,6 +8,7 @@
     - [Host](#host)
     - [Root](#root)
     - [Endpoints](#endpoints)
+      - [Estados](#estados)
       - [Municipios](#municipios)
       - [Colonias](#colonias)
   - [Sociodemográficos API](#sociodemográficos-api)
