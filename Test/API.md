@@ -41,6 +41,23 @@
 
 ### Endpoints
 
+#### Estados
+
+**Description**: Returns a list of objects containing the name and ID of Mexican states. The field `Value` contains the state ID, and the field `Text` contains the state name.
+
+**Request body type**: Form data
+
+**Request body**:
+
+**Response body example**:
+
+```json
+[
+    {"Value":0,"Text":"--TODOS--"},
+    {"Value":1,"Text":"AGUASCALIENTES"}
+]
+```
+
 #### Municipios
 
 **Description**: Returns a list of objects containing the name and ID of municipalities. The field `Value` contains the municipality ID, and the field `Value` contains the municipality name.
