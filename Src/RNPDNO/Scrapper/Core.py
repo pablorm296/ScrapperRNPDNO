@@ -29,6 +29,18 @@ class Scrapper:
     def __init__(self) -> None:
         
         self.__config_loaded = False
+    @staticmethod
+    def validate_request_template(template: dict) -> bool:
+
+        list_of_expected_keys = ["api", "endpoint", "url", "host", "method", "payloadTemplate"]
+        list_of_actual_keys =template.keys()
+
+        list_of_missing_keys = [key for key in list_of_expected_keys if key not in list_of_actual_keys]
+
+        if len(list_of_missing_keys) > 0:
+            return False
+        else:
+            return True
 
     def check_config_loaded(self, error: bool = True) -> bool:
         """Check if app configuration has been loaded
