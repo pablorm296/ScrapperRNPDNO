@@ -182,6 +182,7 @@ class Scrapper:
             ValueError: If app configuration is not loaded before calling this method.
         """
 
+        logger.info("Setting common config variables as class instance properties...")
         self.check_config_loaded()
 
         self.__target_db_name = self.config["SCRAPPER_MONGO_TARGETDB_NAME"]
