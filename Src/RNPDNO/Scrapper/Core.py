@@ -110,6 +110,18 @@ class Scrapper:
         return self.__request_templates
 
     @property
+    def session(self) -> requests.Session:
+        """Scrapper requests session
+
+        Returns:
+            requests.Session: Scrapper requests session.
+        """
+
+        self.check_session_created()
+
+        return self.__session
+
+    @property
     def TARGETDB_NAME(self) -> str:
         """Target MongoDB name
 
