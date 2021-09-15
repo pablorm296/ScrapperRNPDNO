@@ -111,6 +111,11 @@ class Scrapper:
 
     @property
     def request_templates(self) -> list:
+        """Request templates
+
+        Returns:
+            list: A list of request templates (dicts).
+        """
 
         self.check_config_loaded()
 
@@ -219,12 +224,12 @@ class Scrapper:
         template_home = self.get_request_template(api_name = "dashboard", end_point = "home")
 
     def set_common_config_variables(self) -> None:
-        """Set common configuration variables as class properties
+        """Set common configuration variables as class instance properties
 
         Raises:
             ValueError: If app configuration is not loaded before calling this method.
         """
-
+        
         logger.info("Setting common config variables as class instance properties...")
         self.check_config_loaded()
 
@@ -253,6 +258,21 @@ class Scrapper:
         logger.info("App configuration loaded!")
 
     def get_request_template(self, api_name: str, end_point: str, error: bool = False) -> Union[dict, None]:
+        """Get a specific request template by API name and end-point name.
+
+        Args:
+            api_name (str): Name of the API.
+            end_point (str): Name of the end-point.
+            error (bool, optional): Should an exception be raised if the query returns more than one template or no template at all?. Defaults to False.
+
+        Raises:
+            self.Exceptions.TemplateNotFound: Exception raised when no templates match the search query.
+            self.Exceptions.MultipleTemplatesFound: Exception raised when multiple templates match the search query.
+
+        Returns:
+            dict: Request template.
+            None: If no templates or multiple templates are found.
+        """
         
         logger.info("Looking for request template (api: %s, end_point: %s)...", api_name, end_point)
         search_result = next( (doc for doc in self.request_templates if doc["api"] == api_name and doc["endPoint"] == end_point), None )
