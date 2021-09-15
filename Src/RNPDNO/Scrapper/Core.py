@@ -175,6 +175,34 @@ class Scrapper:
         self.__session_created = True
         logger.info("Session created!")
 
+    def send_request(self, method:str, url:str, **kwargs) -> requests.Response:
+        
+        self.check_session_created()
+
+        r = self.session.request(method = method, url = url, **kwargs)
+
+        return r
+
+    def send_request_from_template(self, template: dict, payload: dict) -> requests.Response:
+        
+        if not self.validate_request_template(template):
+            msg = "The supplied template is not valid!"
+            logger.error(msg)
+            raise self.Exceptions.InvalidTemplate(msg)
+
+        # Get request args
+        request_method = template["method"]
+        request_url = "{0}{1}".format(template["host"], template["url"])
+        request_payload = template["payload"]
+
+        # Check if payload is None
+        if request_payload is not None:
+            request_payload = {**request_payload, **payload}
+
+        r = self.send_request(method = request_method, url = request_url, m)
+
+        return r
+
     def set_common_config_variables(self) -> None:
         """Set common configuration variables as class properties
 
