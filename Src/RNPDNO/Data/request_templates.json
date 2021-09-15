@@ -1,6 +1,35 @@
-[
+[   
     {
-        "api": "sociodemográficos",
+        "api": "catalogue",
+        "endpoint": "states",
+        "url": "/Catalogo/Estados",
+        "host": "https://versionpublicarnpdno.segob.gob.mx/",
+        "method": "POST",
+        "payloadTemplate": null
+    },
+    {
+        "api": "catalogue",
+        "endpoint": "municipalities",
+        "url": "/Catalogo/Municipios",
+        "host": "https://versionpublicarnpdno.segob.gob.mx/",
+        "method": "POST",
+        "payloadTemplate": {
+            "idEstado": ""
+        }
+    },
+    {
+        "api": "catalogue",
+        "endpoint": "neighborhoods",
+        "url": "/Catalogo/Colonias",
+        "host": "https://versionpublicarnpdno.segob.gob.mx/",
+        "method": "POST",
+        "payloadTemplate": {
+            "idEstado": "",
+            "idMunicipio": ""
+        }
+    },
+    {
+        "api": "sociodemographics",
         "endPoint": "totals",
         "url": "/Sociodemograficos/Totales",
         "host": "https://versionpublicarnpdno.segob.gob.mx/",
