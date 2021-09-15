@@ -14,10 +14,16 @@ class Scrapper:
         class ConfigNotLoaded(Exception):
             pass
 
+        class SessionNotCreated(Exception):
+            pass
+
         class TemplateNotFound(Exception):
             pass
 
         class MultipleTemplatesFound(Exception):
+            pass
+
+        class InvalidTemplate(Exception):
             pass
 
     def __init__(self) -> None:
