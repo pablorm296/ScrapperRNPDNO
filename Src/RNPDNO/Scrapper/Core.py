@@ -203,6 +203,14 @@ class Scrapper:
 
         return r
 
+    def initialize_requests_sessions(self) -> None:
+        
+        logger.info("Initializing requests session...")
+        self.check_session_created()
+
+        template_index = self.get_request_template(api_name = "dashboard", end_point = "index")
+        template_home = self.get_request_template(api_name = "dashboard", end_point = "home")
+
     def set_common_config_variables(self) -> None:
         """Set common configuration variables as class properties
 
