@@ -60,7 +60,7 @@
 
 #### Municipios
 
-**Description**: Returns a list of objects containing the name and ID of municipalities. The field `Value` contains the municipality ID, and the field `Value` contains the municipality name.
+**Description**: Returns a list of objects containing the name and ID of municipalities. The field `Value` contains the municipality ID, and the field `Text` contains the municipality name.
 
 **Request body type**: Form data
 
@@ -81,7 +81,7 @@
 
 #### Colonias
 
-**Description**: Returns a list of objects containing the name and id of all neighborhoods in the requested municipality. The field `Value` contains the neighborhood ID, and the field `Value` contains the neighborhood name.
+**Description**: Returns a list of objects containing the name and id of all neighborhoods in the requested municipality. The field `Value` contains the neighborhood ID, and the field `Text` contains the neighborhood name.
 
 **Request body type**: Form data
 
