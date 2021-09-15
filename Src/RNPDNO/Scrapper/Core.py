@@ -139,8 +139,12 @@ class Scrapper:
         self.__config_reader = ConfigReader()
 
         logger.info("Starting configuration loading routine...")
+        # Load environment variables
         self.config.load_env_vars()
+        # Load configuration from db
         self.config.load_config(collection = "config_vars")
+
+        # Load request templates from DB
         self.__request_templates = self.config.load_config(collection = "request_templates")
 
         self.__config_loaded = True
