@@ -62,6 +62,26 @@ class Scrapper:
         else:
             return False
 
+    def check_session_created(self, error: bool = True) -> bool:
+        """Check if instance requests session has been created
+
+        Args:
+            error (bool, optional): Should an exception be raised if the requests session has not been created?. Defaults to True.
+
+        Raises:
+            self.Exceptions.SessionNotCreated: If the requests session is not created and error is set to True.
+
+        Returns:
+            bool: Requests session has been created?
+        """
+
+        if self.__session_created:
+            return True
+        elif error:
+            raise self.Exceptions.SessionNotCreated("The request session must be created first via the create_session method!")
+        else:
+            return False
+
     @property
     def config(self) -> ConfigReader:
         """App config
