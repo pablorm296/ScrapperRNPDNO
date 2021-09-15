@@ -1,7 +1,9 @@
-from typing import Union
+from typing import Union, cast
 
 from pymongo.common import _AUTH_OPTIONS
 from RNPDNO.Config import ConfigReader
+
+import requests
 
 import logging
 
