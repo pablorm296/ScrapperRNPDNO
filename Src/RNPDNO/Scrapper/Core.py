@@ -7,8 +7,6 @@ import requests
 
 import logging
 
-logger = logging.getLogger(__name__)
-
 class Scrapper:
 
     class Exceptions:
@@ -88,6 +86,31 @@ class Scrapper:
             raise self.Exceptions.SessionNotCreated("The request session must be created first via the create_session method!")
         else:
             return False
+
+    def create_logger(self, level: int, name:str = "Scrapper.logger", format:str = "%(asctime)s | %(levelname)7s @ %(filename)s : %(message)s", date_format = "%Y-%m-%d %H:%M:%S"):
+
+        logging.info("Creating new logger instance at Scrapper instance...")
+
+        # Create logger
+        self.__logger = logging.getLogger(name)
+
+        # Create a console handler
+        self.__logger_stream_handler = logging.StreamHandler()
+        # Set level
+        self.__logger_stream_handler.setLevel(level)
+
+        # Create a log formatter
+        self.__logger_stream_formatter = logging.Formatter(fmt = format, datefmt = date_format)
+        
+        # Assign stream formatter to stream handler
+        self.__logger_stream_handler.setFormatter(self.__logger_stream_formatter)
+
+        self.logger.info("Logger instance created!")
+
+    @property
+    def logger(self):
+
+        return self.__logger
 
     @property
     def config(self) -> ConfigReader:
@@ -211,13 +234,13 @@ class Scrapper:
         if request_payload is not None:
             request_payload = {**request_payload, **payload}
 
-        r = self.send_request(method = request_method, url = request_url, m)
+        r = self.send_request(method = request_method, url = request_url, data = request_payload)
 
         return r
 
     def initialize_requests_sessions(self) -> None:
         
-        logger.info("Initializing requests session...")
+        self.logger.info("Initializing requests session...")
         self.check_session_created()
 
         template_index = self.get_request_template(api_name = "dashboard", end_point = "index")
@@ -230,7 +253,7 @@ class Scrapper:
             ValueError: If app configuration is not loaded before calling this method.
         """
         
-        logger.info("Setting common config variables as class instance properties...")
+        self.logger.info("Setting common config variables as class instance properties...")
         self.check_config_loaded()
 
         self.__target_db_name = self.config["SCRAPPER_MONGO_TARGETDB_NAME"]
@@ -241,10 +264,10 @@ class Scrapper:
         """Load app configuration
         """
 
-        logger.info("Initializing new instance of configuration reader object...")
+        self.logger.info("Initializing new instance of configuration reader object...")
         self.__config_reader = ConfigReader()
 
-        logger.info("Starting configuration loading routine...")
+        self.logger.info("Starting configuration loading routine...")
         # Load environment variables
         self.config.load_env_vars()
         # Load configuration from db
@@ -255,7 +278,7 @@ class Scrapper:
 
         self.__config_loaded = True
 
-        logger.info("App configuration loaded!")
+        self.logger.info("App configuration loaded!")
 
     def get_request_template(self, api_name: str, end_point: str, error: bool = False) -> Union[dict, None]:
         """Get a specific request template by API name and end-point name.
@@ -274,7 +297,7 @@ class Scrapper:
             None: If no templates or multiple templates are found.
         """
         
-        logger.info("Looking for request template (api: %s, end_point: %s)...", api_name, end_point)
+        self.logger.info("Looking for request template (api: %s, end_point: %s)...", api_name, end_point)
         search_result = next( (doc for doc in self.request_templates if doc["api"] == api_name and doc["endPoint"] == end_point), None )
 
         if search_result is None:
@@ -282,7 +305,7 @@ class Scrapper:
             if error:
                 raise self.Exceptions.TemplateNotFound(msg)
             else:
-                logger.warning(msg)
+                self.logger.warning(msg)
                 return None
 
         if len(search_result) > 1:
@@ -290,7 +313,7 @@ class Scrapper:
             if error:
                 raise self.Exceptions.MultipleTemplatesFound(msg)
             else:
-                logger.warning(msg)
+                self.logger.warning(msg)
                 return None
 
         return search_result
