@@ -211,6 +211,8 @@ class Scrapper:
 
     def send_request(self, method:str, url:str, **kwargs) -> requests.Response:
         
+        self.logger.info("Sending {0} request to {1}...".format(method, url))
+        
         self.check_session_created()
 
         r = self.session.request(method = method, url = url, **kwargs)
@@ -231,7 +233,13 @@ class Scrapper:
 
         # Check if payload is None
         if request_payload is not None:
+            self.logger.debug("Payload object is not None, therefore contents will update the payload template.")
+            self.logger.debug("Request template: {0}".format(request_payload))
+            self.logger.debug("User suplied payload: {0}".format(payload))
+
             request_payload = {**request_payload, **payload}
+
+            self.logger.debug("Updated payload: {0}".format(request_payload))
 
         r = self.send_request(method = request_method, url = request_url, data = request_payload)
 
