@@ -253,6 +253,15 @@ class Scrapper:
         template_index = self.get_request_template(api_name = "dashboard", end_point = "index")
         template_home = self.get_request_template(api_name = "dashboard", end_point = "home")
 
+        # Send request to index page
+        self.logger.info("Requesting dashboard index...")
+        self.send_request_from_template(template_index)
+        # Send request to home page
+        self.logger.info("Requesting dashboard home...")
+        self.send_request_from_template(template_home)
+
+        self.logger.info("Request session initialized!")
+
     def set_common_config_variables(self) -> None:
         """Set common configuration variables as class instance properties
 
