@@ -63,6 +63,30 @@ class Scrapper:
         else:
             return True
 
+    def validate_response_status(self, response: requests.Response, error: bool = True) -> bool:
+        """Validate the response's status
+
+        Args:
+            response (requests.Response): A Response object.
+            error (bool, optional): Should an exception be raised if the response has an unsuccessful status code. Defaults to True.
+
+        Raises:
+            self.Exceptions.UnsuccessfulRequest: The server responded with a status code different from a successfull response and the error arg is set to True.
+
+        Returns:
+            bool: The server responded ok?
+        """
+
+        if response.status_code >= 400:
+            msg = "The server responded with an HTTP status code different from a successful response ({0})".format(response.status_code)
+            if error:
+                raise self.Exceptions.UnsuccessfulRequest(msg)
+            else:
+                self.logger.warning(msg)
+                return False
+
+        return True
+
     def check_config_loaded(self, error: bool = True) -> bool:
         """Check if app configuration has been loaded
 
