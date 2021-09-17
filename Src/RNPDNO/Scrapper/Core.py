@@ -210,7 +210,7 @@ class Scrapper:
         self.logger.info("Session created!")
 
     def send_request(self, method:str, url:str, **kwargs) -> requests.Response:
-        
+
         self.logger.info("Sending {0} request to {1}...".format(method, url))
         
         self.check_session_created()
@@ -219,7 +219,7 @@ class Scrapper:
 
         return r
 
-    def send_request_from_template(self, template: dict, payload: dict) -> requests.Response:
+    def send_request_from_template(self, template: dict, payload: dict = None) -> requests.Response:
         
         if not self.validate_request_template(template):
             msg = "The supplied template is not valid!"
