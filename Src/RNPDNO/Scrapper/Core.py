@@ -1,4 +1,4 @@
-from typing import Union, cast
+from typing import Union
 
 from RNPDNO.Config import ConfigReader
 
