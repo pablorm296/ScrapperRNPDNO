@@ -36,6 +36,11 @@ class Scrapper:
         self.__session = None
         self.__config_reader = None
 
+    def __before_request_checks(self) -> None:
+
+        self.check_config_loaded()
+        self.check_session_created()
+
     @staticmethod
     def validate_request_template(template: dict) -> bool:
 
