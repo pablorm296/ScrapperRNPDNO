@@ -497,9 +497,44 @@ class Scrapper:
 
         return list_of_neighborhoods
 
+    def get_totals(self, state_id: str = "0", mun_id: str = "0", neighborhood_id: str = "0", date_start: str = "", date_end: str = "", **kwargs) -> dict:
+        
+        call_arguments = locals()
 
-    def get_totals(self, state_id: str = "0", mun_id: str = "0", neighborhood_id: str = "0", date_start: str = "", date_ent: str = "", **kwargs) -> dict:
-        pass
+        self.logger.info("Requesting totals for the following query: {0}...".format(call_arguments))
+        self.__before_request_checks()
+
+        template = self.get_request_template(api_name = "sociodemographics", end_point = "total")
+        
+        r = self.send_request_from_template(template, payload = {"idEstado": state_id, "idMunicipio": mun_id, "idColonia": neighborhood_id, "fechaInicio": date_start, "fechaFin": date_end, **kwargs})
+
+        # Get JSON
+        r_content_as_dict = r.json()
+
+        # Get information
+        return_dict = {
+            "total": r_content_as_dict["TotalGlobal"],
+            "desaparecidos_y_nolocalizados": r_content_as_dict["TotalDesaparecidos"],
+            "desaparecidos": r_content_as_dict["TotalSoloDesaparecidos"],
+            "nolocalizados": r_content_as_dict["TotalSoloNoLocalizados"],
+            "localizados": r_content_as_dict["TotalLocalizados"],
+            "localizados_sin_vida": r_content_as_dict["TotalLocalizadosSV"],
+            "localizados_con_vida": r_content_as_dict["TotalLocalizadosCV"],
+        }
+
+        # Coerce information as int
+        for key in return_dict.keys():
+            val = return_dict[key]
+            return_dict[key] = self.formatted_str_as_int(val)
+
+        return_dict.update({
+            "state_id": state_id,
+            "mun_id": mun_id, 
+            "date_start": date_start if date_start != "" else None,
+            "date_end": date_end if date_end != "" else None,
+        })
+
+        return return_dict
 
     def get_missing_by_neighborhood(self, state_id: str, mun_id: str, neighborhood_id: str = "0", **kwargs) -> dict:
         pass
