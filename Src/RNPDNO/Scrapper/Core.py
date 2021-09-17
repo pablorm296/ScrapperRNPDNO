@@ -422,14 +422,81 @@ class Scrapper:
 
         return search_result
 
-    def get_states_catalogue(self):
-        pass
+    def get_states_catalogue(self) -> list:
 
-    def get_municipalities_catalogue(self, state_id: str):
-        pass
+        self.logger.info("Requesting states catalogue...")
+        self.__before_request_checks()
+
+        template = self.get_request_template(api_name = "catalogue", end_point = "states")
+        
+        r = self.send_request_from_template(template)
+
+        # Get JSON
+        r_content_as_dict = r.json()
+
+        # Clean 
+        list_of_states = []
+        
+        for obj in r_content_as_dict:
+            id = obj["Value"]
+            name = obj["Text"]
+
+            name = "All" if name == "--TODOS--" else name
+
+            list_of_states.append({"id": id, "name": name})
+
+        return list_of_states
+
+    def get_municipalities_catalogue(self, state_id: str) -> list:
+        
+        self.logger.info("Requesting municipalities catalogue for the state id {0}...".format(state_id))
+        self.__before_request_checks()
+
+        template = self.get_request_template(api_name = "catalogue", end_point = "municipalities")
+        
+        r = self.send_request_from_template(template, payload = {"idEstado": state_id})
+
+        # Get JSON
+        r_content_as_dict = r.json()
+
+        # Clean 
+        list_of_municipalities = []
+        
+        for obj in r_content_as_dict:
+            id = obj["Value"]
+            name = obj["Text"]
+
+            name = "All" if name == "--TODOS--" else name
+
+            list_of_municipalities.append({"id": id, "name": name})
+
+        return list_of_municipalities
 
     def get_neighborhood_catalogue(self, state_id: str, mun_id: str):
-        pass
+        
+        self.logger.info("Requesting neighborhood catalogue for the state id {0} and municipality id {1}...".format(state_id, mun_id))
+        self.__before_request_checks()
+
+        template = self.get_request_template(api_name = "catalogue", end_point = "neighborhoods")
+        
+        r = self.send_request_from_template(template, payload = {"idEstado": state_id, "idMunicipio": mun_id})
+
+        # Get JSON
+        r_content_as_dict = r.json()
+
+        # Clean 
+        list_of_neighborhoods = []
+        
+        for obj in r_content_as_dict:
+            id = obj["Value"]
+            name = obj["Text"]
+
+            name = "All" if name == "--TODOS--" else name
+
+            list_of_neighborhoods.append({"id": id, "name": name})
+
+        return list_of_neighborhoods
+
 
     def get_totals(self, state_id: str = "0", mun_id: str = "0", neighborhood_id: str = "0", date_start: str = "", date_ent: str = "", **kwargs) -> dict:
         pass
