@@ -1,6 +1,5 @@
 from typing import Union, cast
 
-from pymongo.common import _AUTH_OPTIONS
 from RNPDNO.Config import ConfigReader
 
 import requests
@@ -205,10 +204,10 @@ class Scrapper:
 
     def create_requests_session(self) -> None:
 
-        logger.info("Creating new requests session...")
+        self.logger.info("Creating new requests session...")
         self.__session = requests.Session()
         self.__session_created = True
-        logger.info("Session created!")
+        self.logger.info("Session created!")
 
     def send_request(self, method:str, url:str, **kwargs) -> requests.Response:
         
@@ -222,7 +221,7 @@ class Scrapper:
         
         if not self.validate_request_template(template):
             msg = "The supplied template is not valid!"
-            logger.error(msg)
+            self.logger.error(msg)
             raise self.Exceptions.InvalidTemplate(msg)
 
         # Get request args
