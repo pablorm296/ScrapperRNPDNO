@@ -42,6 +42,15 @@ class Scrapper:
         self.check_session_created()
 
     @staticmethod
+    def formatted_str_as_int(string: str) -> int:
+
+        # Trim and remove any commas
+        string = string.strip()
+        string = string.replace(",", "")
+
+        return int(string)
+
+    @staticmethod
     def validate_request_template(template: dict) -> bool:
 
         list_of_expected_keys = ["api", "endpoint", "url", "host", "method", "payloadTemplate"]
